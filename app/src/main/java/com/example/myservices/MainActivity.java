@@ -1,6 +1,7 @@
 package com.example.myservices;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.WindowCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // hiding action bar
+        getSupportActionBar().hide();
+
+        // hiding status bar
+        WindowCompat.setDecorFitsSystemWindows(getWindow(),false);
 
         start = findViewById(R.id.buttonStart);
         stop = findViewById(R.id.buttonStop);
